@@ -1,13 +1,13 @@
-# Learn Ruby... Now
-## With the [EdgeCase](http://www.edgecase.com) Ruby Koans online
-###[http://koans.heroku.com](http://koans.heroku.com)
+# Learn Ruby Metaprogramming directly from Browser
 
-The Koans walk you along the path to enlightenment in order to learn Ruby. The goal is to learn the Ruby language, syntax, structure, and some common functions and libraries. We also teach you culture. Testing is not just something we pay lip service to, but something we live. It is essential in your quest to learn and do great things in the language.
+Ruby Metaprogramming koans is hosted at: http://rubymetakoans.heroku.com. Use it to begin learning Ruby metaprogramming directly from the browser without
+having to install ruby, git.
 
-Use the library to begin learning ruby from the comfort of your favorite browser without
-having to install ruby, git or fight any of the other various platform specific issues
-that keep you from taking that all important first step into a larger world.
+Ruby Metaprogramming koans online is the browser version of Metaprogramming koans ([https://github.com/sathish316/metaprogramming_koans](https://github.com/sathish316/metaprogramming_koans))
 
-With the Ruby Koans Online, you can dip your big toe into a larger world no matter
-where you are or what you're doing. So what are you waiting for? Try the Ruby Koans
-Online now and take your first step into the wonderful world of Ruby.
+If you're learning Ruby, checkout the original Ruby koans or the online version of the original Ruby koans from which this project is derived:
+
+* Ruby Koans: [https://github.com/edgecase/ruby_koans](https://github.com/edgecase/ruby_koans)
+* Ruby Koans online: [http://koans.heroku.com](http://koans.heroku.com)
+* Ruby Koans online (source): [https://github.com/edgecase/ruby_koans_online](https://github.com/edgecase/ruby_koans_online)
+
