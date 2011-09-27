@@ -72,10 +72,10 @@ class String
             else
               match
             end
-          elsif input_values[count].to_s =~ /^['"](.*?)['"]$/
-            "%q{#{$1}}"
           else
-            "#{input_values[count]}"
+            v = "#{input_values[count]}"
+            puts v
+            v
           end
           session[session_code_match_name.to_sym] = x unless session_code_match_name.empty?
           count = count + 1
