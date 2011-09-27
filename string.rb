@@ -11,6 +11,7 @@ class String
   end
 
   def swap_user_values(input_values, session)
+    p input_values
     count = 0
     method_area = false
     method_name = nil
