@@ -1,0 +1,8 @@
+#{current_koan_name} has heightened your awareness.
+%br/
+%br/
+#{current_koan_count}/#{KOAN_FILENAMES.count} complete
+%br/
+%form
+  %input{:type => 'hidden', :name => 'koan', :value => next_koan_name}/
+  %input{:type => 'submit', :value => "Meditate on #{next_koan_name}"}/

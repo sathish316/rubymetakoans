@@ -1,0 +1,18 @@
+%form
+  %input{:type => 'hidden', :name => 'koan', :value => current_koan_name}/
+  .meditate{:nowrap => 'nowrap'}
+    %input{:type => 'submit', :value => 'Click to submit Meditation or press Enter while in the form.'}/
+    .koans
+      = @inputs
+
+  - if params[:error_panel]
+    .error_panel
+      %input{:type => 'submit', :value => 'Meditate'}/
+      %br/
+      Results
+      = @pass_count
+      %br/
+      = @failures.values.join("\n").preify
+      = @failures.values.first.backtrace
+      = @failures.values.count
+      = @error
