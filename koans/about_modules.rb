@@ -1,63 +1,87 @@
 require File.expand_path(File.dirname(__FILE__) + '/edgecase')
 
 class AboutModules < EdgeCase::Koan
-  module Nameable
-    def set_name(new_name)
-      @name = new_name
+  
+  module Greeting
+    def say_hello
+      "Hello"
+    end
+  end
+  
+  class Foo
+    include Greeting
+  end
+  
+  module Greeting
+    def say_hello
+      "Hi"
+    end
+  end
+  
+  def test_module_methods_are_active
+    assert_equal __, Foo.new.say_hello
+  end
+  
+  def test_extend_adds_singleton_methods
+    animal = "cat"
+    animal.extend Greeting
+
+    assert_equal __, animal.say_hello
+  end
+
+  def test_another_way_to_add_singleton_methods_from_module
+    animal = "cat"
+    class << animal
+      include Greeting
     end
 
-    def here
-      :in_module
+    assert_equal __, animal.say_hello
+  end
+  
+  class Bar
+    extend Greeting
+  end
+  
+  def test_extend_adds_class_methods_or_singleton_methods_on_the_class
+    assert_equal __, Bar.say_hello
+  end
+  
+  module Moo
+    def instance_method
+      :instance_value
+    end
+
+    module ClassMethods
+      def class_method
+        :class_value
+      end
     end
   end
 
-  def test_cant_instantiate_modules
-    assert_raise(___) do
-      Nameable.new
+  class Baz
+    include Moo
+    extend Moo::ClassMethods
+  end
+  
+  def test_include_instance_methods_and_extend_class_methods
+    assert_equal __, Baz.new.instance_method
+    assert_equal __, Baz.class_method
+  end
+  
+  module Moo
+    def self.included(klass)
+      #WRITE CODE HERE
+      klass.extend(ClassMethods)
     end
   end
 
-  # ------------------------------------------------------------------
-
-  class Dog
-    include Nameable
-
-    attr_reader :name
-
-    def initialize
-      @name = "Fido"
-    end
-
-    def bark
-      "WOOF"
-    end
-
-    def here
-      :in_object
-    end
+  class Foo
+    include Moo
   end
-
-  def test_normal_methods_are_available_in_the_object
-    fido = Dog.new
-    assert_equal __, fido.bark
+  
+  def test_included_is_a_hook_method_that_can_be_used_to_extend_automatically
+    assert_equal __, Foo.new.instance_method
+    assert_equal __, Foo.class_method
   end
-
-  def test_module_methods_are_also_availble_in_the_object
-    fido = Dog.new
-    assert_nothing_raised(Exception) do
-      fido.set_name("Rover")
-    end
-  end
-
-  def test_module_methods_can_affect_instance_variables_in_the_object
-    fido = Dog.new
-    assert_equal __, fido.name
-    fido.set_name("Rover")
-    assert_equal __, fido.name
-  end
-
-  def test_classes_can_override_module_methods
-    fido = Dog.new
-    assert_equal __, fido.here
-  end
+  
 end

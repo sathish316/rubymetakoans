@@ -8,7 +8,6 @@ require File.expand_path(File.dirname(__FILE__) + '/path_grabber')
 KOAN_FILENAMES     = PathGrabber.new.koan_filenames
 EDGECASE_CODE      = IO.read("koans/edgecase.rb").remove_require_lines.split(/END\s?\{/).first
 EDGECASE_OVERRIDES = IO.read("overrides.rb")
-ARRAY_ORIGINAL     = IO.read("koans/about_arrays.rb").remove_require_lines
 
 class FakeFile
   CONTENT = "this\nis\na\ntest"
