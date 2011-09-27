@@ -85,7 +85,6 @@ def runnable_code(session={})
     require 'timeout'
     require 'test/unit'
     require 'test/unit/assertions'
-    Test::Unit::Assertions::AssertionMessage.use_pp= false
 
     RESULTS = {:failures => {}, :pass_count => 0}
     $SAFE = 3
