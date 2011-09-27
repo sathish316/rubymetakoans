@@ -42,8 +42,6 @@ class FakeFile
 end
 
 def input
-  p "params"
-  p params
   (params[:input] ||= [])
 end
 def current_koan_name

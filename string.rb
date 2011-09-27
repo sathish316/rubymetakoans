@@ -11,7 +11,6 @@ class String
   end
 
   def swap_user_values(input_values, session)
-    p input_values
     count = 0
     method_area = false
     method_name = nil
@@ -74,9 +73,7 @@ class String
               match
             end
           else
-            v = "#{input_values[count]}"
-            puts v
-            v
+            "#{input_values[count]}"
           end
           session[session_code_match_name.to_sym] = x unless session_code_match_name.empty?
           count = count + 1
