@@ -7,18 +7,6 @@
     - if @end
       %script{:src => "http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.latest.js"}
     %script{:src => '/javascripts/koans.js'}
-    :javascript
-      var _gaq = [];
-      _gaq.push(['_setAccount', 'UA-25906115-1']);
-      _gaq.push(['_trackPageview']);
-
-      var googleAnalytics = function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      };
-      googleAnalytics();
-
   %body
     #top_line
     %img#swoosh{:src => '/images/enso.gif'}
