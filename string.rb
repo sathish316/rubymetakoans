@@ -72,6 +72,8 @@ class String
             else
               match
             end
+          elsif input_values[count].to_s =~ /^['"](.*?)['"]$/
+            "%q{#{$1}}"
           else
             "#{input_values[count]}"
           end
